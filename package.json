@@ -2,10 +2,28 @@
   "name": "matrix",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/matrix.js",
+  "bin": {
+    "matrix_repl": "./dist/matrix_repl.js"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm run clean",
+    "build": "webpack",
+    "start": "npm run build && node ./dist/matrix_repl.js"
   },
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-syntax-dynamic-import": "^7.8.3",
+    "@babel/preset-env": "^7.11.5",
+    "@types/node": "^14.11.2",
+    "babel-loader": "^8.1.0",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.3",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
 }
