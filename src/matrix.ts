@@ -117,4 +117,15 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
         }
         return res;
     }
+
+    get transpose() {
+        let res = new Matrix(this.#c, this.#r);
+        let dataIdx = 0;
+        for (let y = 0; y < res.#r; ++y) {
+            for (let x = 0; x < res.#c; ++x) {
+                res.#data[dataIdx++] = this.val(y, x);
+            }
+        }
+        return res;
+    }
 }

@@ -78,4 +78,9 @@ describe("Matrix calculate", function () {
         assert.equal(String(mat.multiply(Matrix.unit(3))), String(mat));
         assert.equal(String(Matrix.unit(2).multiply(mat)), String(mat));
     });
+
+    it('matrix transpose', function () {
+        let mat = new Matrix(2, 3, [1, 2, 3, 4, 5, 6]);
+        assert.equal(String(mat.transpose), '|1,4|\n|2,5|\n|3,6|');
+    });
 });
