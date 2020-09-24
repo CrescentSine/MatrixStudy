@@ -15,6 +15,14 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
         return new Matrix(1, 1, [n]);
     }
 
+    static unit<D extends number>(n: D) {
+        let res = new Matrix(n, n);
+        for (let i = 0; i < n; ++i) {
+            res.#data[i * n + i] = 1;
+        }
+        return res;
+    }
+
     get rows() {
         return this.#r;
     }

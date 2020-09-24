@@ -47,9 +47,12 @@ describe("Matrix testing", function () {
     it('get wrong column', function () {
         assert.throw(() => dataMat.getColumn(-1), 'wrong column index');
     });
+    it('unit matrix', function () {
+        assert.equal(String(Matrix.unit(3)), '|1,0,0|\n|0,1,0|\n|0,0,1|');
+    })
 });
 
-describe("Matrix caculate", function () {
+describe("Matrix calculate", function () {
     it('matrix addition', function () {
         let left = new Matrix(2, 2, [1, 2, 3, 4]);
         let right = new Matrix(2, 2, [3, 7, 5, 4]);
@@ -65,10 +68,14 @@ describe("Matrix caculate", function () {
         let right = new Matrix(3, 2, [1, 4, 2, 5, 3, 6]);
         assert.equal(String(left.multiply(right)), '|14,32|\n|32,77|');
     });
-
     it('hadamard product', function () {
         let left = new Matrix(2, 2, [1, 2, 4, 5]);
         let right = new Matrix(2, 2, [1, 4, 2, 5]);
         assert.equal(String(left.hadamard(right)), '|1,8|\n|8,25|');
-    })
+    });
+    it('multiply by unit', function () {
+        let mat = new Matrix(2, 3, [1, 2, 3, 4, 5, 6]);
+        assert.equal(String(mat.multiply(Matrix.unit(3))), String(mat));
+        assert.equal(String(Matrix.unit(2).multiply(mat)), String(mat));
+    });
 });
