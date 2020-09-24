@@ -129,4 +129,26 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
         }
         return res;
     }
+
+    swapRow(r1: number, r2: number) {
+        let row1 = this.getRow(r1);
+        let row2 = this.getRow(r2);
+        return this.changeRow(r1, row2)
+            .changeRow(r2, row1);
+    }
+
+    rowMultiBy(r: number, multiBy: number) {
+        let row = this.getRow(r);
+        let multiplyer = Matrix.number(multiBy);
+        row = multiplyer.multiply(row);
+        return this.changeRow(r, row);
+    }
+
+    rowAddToRow(r: number, addTo: number) {
+        let row = this.getRow(addTo);
+        let addBy = this.getRow(r);
+        let newRow = row.add(addBy);
+        let res = this.changeRow(addTo, newRow);
+        return res;
+    }
 }

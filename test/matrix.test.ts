@@ -50,5 +50,5 @@ describe("Matrix testing", function () {
     });
     it('unit matrix', function () {
         assert.equal(String(Matrix.unit(3)), '|1,0,0|\n|0,1,0|\n|0,0,1|');
-    })
+    });
 });
