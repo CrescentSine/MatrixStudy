@@ -120,4 +120,13 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
         }
         return res;
     }
+
+    changeRow(r: number, row: Matrix<1, C>) {
+        let res = new Matrix(this.#r, this.#c, this.#data);
+        let baseIdx = r * this.#c;
+        for (let x = 0; x < this.#c; ++x) {
+            res.#data[baseIdx + x] = row.val(x, 0);
+        }
+        return res;
+    }
 }
