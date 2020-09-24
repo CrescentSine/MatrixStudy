@@ -3,7 +3,6 @@
     "mocha.requires": [
         "ts-node/register"
     ],
-    "files.autoSave": "afterDelay",
     "editor.formatOnPaste": true,
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "modifications",
