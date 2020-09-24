@@ -12,6 +12,10 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
         this.#c = c;
     }
 
+    static number(n: number) {
+        return new Matrix(1, 1, [n]);
+    }
+
     get rows() {
         return this.#r;
     }

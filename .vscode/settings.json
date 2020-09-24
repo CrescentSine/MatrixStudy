@@ -2,5 +2,10 @@
     "mocha.files.glob": "./test/**/*.test.[t|j]s",
     "mocha.requires": [
         "ts-node/register"
-    ]
+    ],
+    "files.autoSave": "afterDelay",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
+    "editor.formatOnType": true
 }

@@ -16,7 +16,14 @@
   },
   "nyc": {
     "extension": [".ts"],
-    "exclude": ["**/*.d.ts", "node_modules", "dist", "test", "webpack.config.js"]
+    "exclude": [
+      "**/*.d.ts",
+      "node_modules",
+      "dist",
+      "coverage",
+      "test",
+      "webpack.config.js"
+    ]
   },
   "author": "",
   "license": "MIT",
