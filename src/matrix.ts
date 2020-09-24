@@ -73,15 +73,7 @@ export default class Matrix<R extends number = 1, C extends number = 1> {
     }
 
     reshape<NewR extends number, NewC extends number>(r: NewR, c: NewC) {
-        let mat: Matrix<NewR, NewC>;
-        if (r * c === this.#r * this.#c) {
-            mat = new Matrix(r, c);
-            mat.#data = this.#data;
-        }
-        else {
-            mat = new Matrix(r, c, this.#data);
-        }
-        return mat;
+        return new Matrix(r, c, this.#data);
     }
 
     add(mat: Matrix<R, C>) {
