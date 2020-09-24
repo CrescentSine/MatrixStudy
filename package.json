@@ -15,14 +15,10 @@
     "start": "npm run build && node ./dist/matrix_repl.js"
   },
   "nyc": {
+    "all": true,
     "extension": [".ts"],
-    "exclude": [
-      "**/*.d.ts",
-      "node_modules",
-      "dist",
-      "coverage",
-      "test",
-      "webpack.config.js"
+    "include": [
+      "src/**/*.ts"
     ]
   },
   "author": "",
