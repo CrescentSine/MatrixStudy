@@ -1,5 +1,5 @@
 import repl = require('repl');
 
-import('./matrix').then(module => {
+import('../src/matrix').then(module => {
     repl.start().context.Matrix = module.default;
 });

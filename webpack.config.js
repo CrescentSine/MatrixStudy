@@ -8,8 +8,8 @@ const babelLoaderConf = {
 
 module.exports = {
     entry: {
-        matrix_repl: './matrix_repl.ts',
-        matrix: './matrix.ts',
+        matrix_repl: './bin/matrix_repl.ts',
+        matrix: './src/matrix.ts',
     },
     module: {
         rules: [
